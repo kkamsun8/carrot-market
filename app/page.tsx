@@ -1,16 +1,24 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="flex h-screen items-center justify-center bg-gray-100 p-5">
-      <div className="flex w-full max-w-screen-sm flex-col gap-2 rounded-3xl bg-white p-5 shadow-lg">
-        <input
-          className="h-12 w-full rounded-full bg-gray-200 py-3 pl-5 outline-none ring ring-transparent transition-shadow focus:ring-orange-500 focus:ring-offset-2"
-          type="text"
-          placeholder="Search here..."
-        />
-        <button className="rounded-full bg-black bg-opacity-50 py-2 font-medium text-white transition-transform focus:scale-90 active:scale-90">
-          Search
-        </button>
+    <div className="flex min-h-screen flex-col items-center justify-between p-6">
+      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">당근</h1>
+        <h2 className="text-2xl">당근 마겟에 어서오세요!</h2>
       </div>
-    </main>
+      <div className="flex w-full flex-col items-center gap-3">
+        <Link href="/create-account" className="primary-btn py-2.5 text-lg">
+          시작하기
+        </Link>
+        <div className="flex gap-2">
+          <span>이미 계정이 있나요?</span>
+          <Link href="/login" className="hover:underline">
+            로그인
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
